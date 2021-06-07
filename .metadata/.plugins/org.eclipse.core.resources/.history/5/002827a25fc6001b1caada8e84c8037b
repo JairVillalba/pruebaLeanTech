@@ -1,0 +1,38 @@
+package com.prueba.leantech.dtos;
+
+import com.prueba.leantech.entities.Person;
+import com.prueba.leantech.entities.Position;
+
+public class EmployeeDTO {
+
+	private long id;
+	private Person person;
+	private Position position;
+	private Long salary;
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public Person getPerson() {
+		return person;
+	}
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+	public Position getPosition() {
+		return position;
+	}
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+	public Long getSalary() {
+		return salary;
+	}
+	public void setSalary(Long salary) {
+		this.salary = salary;
+	}
+	
+}

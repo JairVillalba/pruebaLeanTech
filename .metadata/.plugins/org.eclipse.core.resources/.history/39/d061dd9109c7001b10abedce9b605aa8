@@ -1,0 +1,13 @@
+package com.prueba.leantech.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.prueba.leantech.entities.Employee;
+
+public interface EmployeeRepository extends JpaRepository<Employee, Long>{
+
+	List<Employee> findByPerson_NameLike(String nombre);
+
+}

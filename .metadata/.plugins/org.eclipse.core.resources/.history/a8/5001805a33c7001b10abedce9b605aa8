@@ -1,0 +1,37 @@
+package com.prueba.leantech.services.implementation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.prueba.leantech.dtos.PositionConsultaDTO;
+import com.prueba.leantech.entities.Position;
+import com.prueba.leantech.repository.PositionRepository;
+import com.prueba.leantech.services.ConsultarPositionServiceI;
+
+public class ConsultarPositionService implements ConsultarPositionServiceI{
+
+	@Autowired
+	PositionRepository positionRepository;
+	
+	@Override
+	public List<PositionConsultaDTO> consultarEmpleados() {
+
+		List<PositionConsultaDTO> cargos = new ArrayList<>();
+		
+		List<Position> positions = new ArrayList<>(); 
+		positions = positionRepository.findAll();
+		
+		for (Position position : positions) {
+			PositionConsultaDTO cargo = new PositionConsultaDTO();
+			
+			cargo.setId(position.getId());
+			cargo.setName(position.getName());
+			
+			cargos.add(cargo);
+		}
+		return cargos;
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.prueba.leantech.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Employee {
+
+	@Id
+	private int id;
+	private Person person;
+	
+	private Long salary;
+}

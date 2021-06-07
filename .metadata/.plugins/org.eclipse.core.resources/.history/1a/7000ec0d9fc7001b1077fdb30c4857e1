@@ -1,0 +1,52 @@
+package com.prueba.leantech.services.implementation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.prueba.leantech.dtos.EmployeeDTO;
+import com.prueba.leantech.dtos.PositionConsultaDTO;
+import com.prueba.leantech.entities.Position;
+import com.prueba.leantech.repository.EmployeeRepository;
+import com.prueba.leantech.repository.PositionRepository;
+import com.prueba.leantech.services.ConsultarPositionServiceI;
+
+@Service
+public class ConsultarPositionService implements ConsultarPositionServiceI{
+
+	@Autowired
+	PositionRepository positionRepository;
+	
+	@Autowired
+	EmployeeRepository employeeRepository;
+	
+	@Override
+	public List<PositionConsultaDTO> consultarEmpleadosCargo() {
+
+		List<PositionConsultaDTO> cargos = new ArrayList<>();
+		
+		List<Position> positions = new ArrayList<>(); 
+		positions = positionRepository.findAll();
+		
+		for (Position position : positions) {
+			PositionConsultaDTO cargo = new PositionConsultaDTO();
+			
+			cargo.setId(position.getId());
+			cargo.setName(position.getName());
+			
+			cargos.add(cargo);
+		}
+		return cargos;
+	}
+	
+	private List<EmployeeDTO> employeePosition(int idPosition){
+		
+		List<EmployeeDTO> empleados = employeeRepository.findByPosition_IdLike(idPosition);
+		EmployeeDTO empleado = new EmployeeDTO();
+		
+		for
+	}
+
+}

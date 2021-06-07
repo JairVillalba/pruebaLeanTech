@@ -1,0 +1,15 @@
+package com.prueba.leantech.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.prueba.leantech.services.implementation.ConsultarPositionService;
+
+@RestController
+@RequestMapping("/position")
+public class PositionCnotroller {
+
+	@Autowired
+	private ConsultarPositionService consultarPositionService;
+}

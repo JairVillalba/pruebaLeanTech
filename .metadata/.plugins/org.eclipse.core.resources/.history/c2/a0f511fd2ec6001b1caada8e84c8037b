@@ -1,0 +1,5 @@
+package com.prueba.leantech.dtos;
+
+public class EmployeeDTO {
+
+}

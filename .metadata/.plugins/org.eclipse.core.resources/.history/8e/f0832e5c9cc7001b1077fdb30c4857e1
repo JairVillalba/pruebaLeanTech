@@ -1,0 +1,66 @@
+package com.prueba.leantech.services.implementation;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.prueba.leantech.dtos.EmployeeDTO;
+import com.prueba.leantech.entities.Employee;
+import com.prueba.leantech.entities.Person;
+import com.prueba.leantech.entities.Position;
+import com.prueba.leantech.repository.EmployeeRepository;
+import com.prueba.leantech.repository.PositionRepository;
+import com.prueba.leantech.services.CrearEmpleadoServiceI;
+
+@Service
+public class CrearEmpleadoService implements CrearEmpleadoServiceI {
+
+	@Autowired
+	EmployeeRepository employeeRepository;
+	
+	@Autowired
+	PositionRepository positionRepository;
+	
+	@Override
+	public EmployeeDTO crearEmpleado(EmployeeDTO empleado) {
+		
+		Employee employee = new Employee();
+		Person persona = new Person();
+		Position position = new Position();
+		
+		List<Position> cargos = positionRepository.findAll();
+		
+		employee.setId(empleado.getId());
+		
+		persona.setId(empleado.getPerson().getId());
+		persona.setName(empleado.getPerson().getName());
+		persona.setLastName(empleado.getPerson().getLastName());
+		persona.setAddress(empleado.getPerson().getAddress());
+		persona.setCellphone(empleado.getPerson().getCellphone());
+		persona.setCityName(empleado.getPerson().getCityName());
+		
+		employee.setPerson(persona);
+		
+		position.setId(empleado.getPosition().getId());
+		position.setName(empleado.getPosition().getName());
+		
+		if (!cargos.isEmpty()) {
+			for (Position position2 : cargos) {
+				if (position.getName().equals(position2.getName())) {
+					positionRepository.delete(position);
+				}
+			}
+		}
+			
+		employee.setPosition(position);
+		
+		employee.setSalary(empleado.getSalary());
+		
+		positionRepository.save(position);
+		employeeRepository.save(employee);
+		
+		return empleado;
+	}
+
+}

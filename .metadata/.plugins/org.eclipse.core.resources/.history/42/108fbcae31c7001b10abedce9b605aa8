@@ -1,0 +1,5 @@
+package com.prueba.leantech.services.implementation;
+
+public class ConsultarPositionService {
+
+}
