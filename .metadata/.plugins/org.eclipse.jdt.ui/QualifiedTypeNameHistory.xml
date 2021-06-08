@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.prueba.leantech.services.ConsultarPositionServiceI"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="com.prueba.leantech.entities.Position"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.prueba.leantech.services.implementation.ConsultarPositionService"/>
     <fullyQualifiedTypeName name="com.prueba.leantech.dtos.PositionConsultaDTO"/>
-    <fullyQualifiedTypeName name="com.prueba.leantech.repository.PositionRepository"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.prueba.leantech.services.EliminarEmployeeI"/>
-    <fullyQualifiedTypeName name="com.prueba.leantech.dtos.EmployeeDTO"/>
-    <fullyQualifiedTypeName name="com.prueba.leantech.entities.Employee"/>
     <fullyQualifiedTypeName name="com.prueba.leantech.services.ActualizarEmployeeI"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="org.mockito.InjectMocks"/>
+    <fullyQualifiedTypeName name="com.prueba.leantech.dtos.EmployeeDTO"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
+    <fullyQualifiedTypeName name="com.prueba.leantech.entities.Employee"/>
+    <fullyQualifiedTypeName name="com.prueba.leantech.entities.Person"/>
+    <fullyQualifiedTypeName name="com.prueba.leantech.entities.Position"/>
+    <fullyQualifiedTypeName name="org.mockito.Mock"/>
+    <fullyQualifiedTypeName name="org.mockito.Mockito"/>
+    <fullyQualifiedTypeName name="com.prueba.leantech.repository.PositionRepository"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
+    <fullyQualifiedTypeName name="org.mockito.MockitoAnnotations"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.extension.ExtendWith"/>
+    <fullyQualifiedTypeName name="org.mockito.junit.jupiter.MockitoExtension"/>
 </qualifiedTypeNameHistroy>

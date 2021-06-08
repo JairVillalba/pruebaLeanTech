@@ -11,6 +11,7 @@ import com.prueba.leantech.dtos.PersonDTO;
 import com.prueba.leantech.dtos.PositionDTO;
 import com.prueba.leantech.entities.Employee;
 import com.prueba.leantech.repository.EmployeeRepository;
+import com.prueba.leantech.repository.PositionRepository;
 import com.prueba.leantech.services.ConsultarEmpleadoServiceI;
 
 @Service
@@ -18,6 +19,11 @@ public class ConsultarEmpleadoService implements ConsultarEmpleadoServiceI{
 
 	@Autowired
 	EmployeeRepository employeeRepository;
+	
+	@Autowired
+	public ConsultarEmpleadoService(EmployeeRepository employeeRepository) {
+		this.employeeRepository = employeeRepository;
+	}
 	
 	@Override
 	public List<EmployeeDTO> consultarEmpleados(String nombre, String cargo) {

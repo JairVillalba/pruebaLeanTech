@@ -22,6 +22,13 @@ public class CrearEmpleadoService implements CrearEmpleadoServiceI {
 	@Autowired
 	PositionRepository positionRepository;
 	
+	@Autowired
+	public CrearEmpleadoService(EmployeeRepository employeeRepository,
+			PositionRepository positionRepository) {
+		this.employeeRepository = employeeRepository;
+		this.positionRepository = positionRepository;
+	}
+	
 	@Override
 	public EmployeeDTO crearEmpleado(EmployeeDTO empleado) {
 		
@@ -46,7 +53,7 @@ public class CrearEmpleadoService implements CrearEmpleadoServiceI {
 		
 		employee.setSalary(empleado.getSalary());
 		
-		if (!cargos.contains(position)) {
+		if (cargos != null && !cargos.contains(position)) {
 			positionRepository.save(position);
 		}
 		
